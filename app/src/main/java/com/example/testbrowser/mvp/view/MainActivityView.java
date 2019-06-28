@@ -8,4 +8,5 @@ import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 public interface MainActivityView extends MvpView {
     void loadURLtoWebView (String url);
     void changeTextinEditText (String text);
+    void progressUpdate();
 }
