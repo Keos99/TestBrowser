@@ -107,11 +107,4 @@ public class MainActivity extends MvpAppCompatActivity implements MainActivityVi
     public void changeTextinEditText(String text) {
         editText.setText(text);
     }
-
-    @Override
-    public void progressUpdate() {
-        while (webView.getProgress() < 100 && webView.getProgress() > 0) {
-            progressBar.setProgress(webView.getProgress());
-        }
-    }
 }
