@@ -1,5 +1,7 @@
 package com.example.testbrowser.mvp.presenter;
 
+import android.os.AsyncTask;
+
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 import com.example.testbrowser.mvp.view.MainActivityView;

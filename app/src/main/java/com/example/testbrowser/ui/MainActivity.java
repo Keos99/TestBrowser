@@ -7,11 +7,13 @@ import android.text.InputType;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
@@ -26,6 +28,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainActivityVi
     private ImageButton forwardButton;
     private EditText editText;
     private WebView webView;
+    private ProgressBar progressBar;
 
     @InjectPresenter
     MainActivityPresenter presenter;
@@ -58,6 +61,12 @@ public class MainActivity extends MvpAppCompatActivity implements MainActivityVi
         webView = findViewById(R.id.mainactivity_webview);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new MyWebViewClient());
+        progressBar = findViewById(R.id.mainactivity_progressbar);
+        webView.setWebChromeClient(new WebChromeClient() {
+            public void onProgressChanged(WebView view, int progress) {
+                progressBar.setProgress(progress);
+            }
+        });
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

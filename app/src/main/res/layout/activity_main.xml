@@ -35,12 +35,21 @@
             app:layout_constraintLeft_toRightOf="@id/button_forward"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/mainactivity_progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"/>
 
     <WebView
         android:id="@+id/mainactivity_webview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@id/mainactivity_progressbar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         >
